@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="en">
+<link rel="stylesheet" href="styles.css">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Pizza Ordering Form</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: "Times New Roman", Times, serif;
+      background: #0a2a43; /* dark blue like the screenshot */
+    }
+    main {
+      max-width: 360px;
+      margin: 18px auto;
+      background: #fff;
+      padding: 14px 16px 18px;
+      border: 1px solid #cfcfcf;
+    }
+    h1 { margin: 0 0 10px; font-size: 32px; line-height: 1.05; }
+    h2 { margin: 18px 0 10px; font-size: 26px; }
+    fieldset { border: 0; padding: 0; margin: 0; }
+    .row { display: flex; align-items: center; gap: 8px; margin: 2px 0; }
+    label { min-width: 62px; }
+    input[type="text"], input[type="tel"], input[type="email"], textarea, select {
+      font-family: inherit;
+      font-size: 14px;
+    }
+    textarea { width: 180px; height: 64px; }
+    .toppings label, .sauce label { min-width: auto; }
+    .toppings { display: flex; flex-wrap: wrap; gap: 6px 12px; max-width: 280px; }
+    table { border-collapse: collapse; margin-top: 6px; }
+    th, td { border: 1px solid #333; padding: 2px 4px; vertical-align: top; }
+    caption { caption-side: top; text-align: left; font-weight: bold; margin-bottom: 4px; }
+  </style>
+</head>
+
+<body>
+  <main>
+    <h1>Pizza Ordering Form</h1>
+
+    <section aria-labelledby="contact-heading">
+      <h2 id="contact-heading">Contact Information</h2>
+
+      <form action="#" method="post">
+        <fieldset>
+          <div class="row">
+            <label for="name">Name:</label>
+            <input id="name" name="name" type="text" required />
+          </div>
+
+          <div class="row">
+            <label for="phone">Phone:</label>
+            <input id="phone" name="phone" type="tel" required />
+          </div>
+
+          <div class="row">
+            <label for="email">Email:</label>
+            <input id="email" name="email" type="email" required />
+          </div>
+        </fieldset>
+
+        <section aria-labelledby="size-heading">
+          <h2 id="size-heading">Select Pizza Size</h2>
+
+          <div class="row">
+            <label for="size">Pizza Size:</label>
+            <select id="size" name="size" required>
+              <option value="" selected disabled>--Select Size--</option>
+              <option value="medium">Medium</option>
+              <option value="large">Large</option>
+              <option value="xlarge">XLarge</option>
+            </select>
+          </div>
+        </section>
+
+        <section aria-labelledby="sauce-heading">
+          <h2 id="sauce-heading">Select Sauce</h2>
+
+          <fieldset class="sauce">
+            <legend class="sr-only" style="position:absolute; left:-9999px;">Sauce Type</legend>
+
+            <div class="row">
+              <input id="marinara" name="sauce" type="radio" value="marinara" required />
+              <label for="marinara">Marinara</label>
+            </div>
+
+            <div class="row">
+              <input id="ranch" name="sauce" type="radio" value="ranch" />
+              <label for="ranch">Ranch</label>
+            </div>
+
+            <div class="row">
+              <input id="nosauce" name="sauce" type="radio" value="none" />
+              <label for="nosauce">No Sauce</label>
+            </div>
+          </fieldset>
+        </section>
+
+        <section aria-labelledby="toppings-heading">
+          <h2 id="toppings-heading">Select Toppings</h2>
+
+          <fieldset>
+            <legend class="sr-only" style="position:absolute; left:-9999px;">Pizza Toppings</legend>
+
+            <div class="toppings">
+              <div>
+                <input id="pepperoni" name="toppings" type="checkbox" value="pepperoni" />
+                <label for="pepperoni">Pepperoni</label>
+              </div>
+              <div>
+                <input id="sausage" name="toppings" type="checkbox" value="sausage" />
+                <label for="sausage">Sausage</label>
+              </div>
+              <div>
+                <input id="mushroom" name="toppings" type="checkbox" value="mushroom" />
+                <label for="mushroom">Mushroom</label>
+              </div>
+              <div>
+                <input id="pineapple" name="toppings" type="checkbox" value="pineapple" />
+                <label for="pineapple">Pineapple</label>
+              </div>
+              <div>
+                <input id="peppers" name="toppings" type="checkbox" value="peppers" />
+                <label for="peppers">Peppers</label>
+              </div>
+              <div>
+                <input id="onions" name="toppings" type="checkbox" value="onions" />
+                <label for="onions">Onions</label>
+              </div>
+            </div>
+          </fieldset>
+        </section>
+
+        <section aria-labelledby="instructions-heading">
+          <h2 id="instructions-heading">Additional Instructions</h2>
+
+          <div class="row" style="align-items:flex-start;">
+            <label for="instructions" style="min-width:auto;"></label>
+            <textarea id="instructions" name="instructions">Add instructions</textarea>
+          </div>
+
+          <div class="row" style="margin-top:6px;">
+            <button type="submit">Submit</button>
+          </div>
+        </section>
+      </form>
+    </section>
+
+    <section aria-labelledby="games-heading" style="margin-top:20px;">
+      <h3 id="games-heading" style="margin:0 0 6px; font-size:16px; font-weight:normal;">
+        List of My Favorite Games
+      </h3>
+
+      <!-- Warning about border attribute is acceptable -->
+      <table border="1">
+        <caption>Favorite Video Games</caption>
+
+        <thead>
+          <tr>
+            <th scope="col">Developer</th>
+            <th scope="col">Title</th>
+            <th scope="col">Year</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr>
+            <!-- vertical merge (rowspan) -->
+            <td rowspan="3">Bungie</td>
+            <td>Halo</td>
+            <td>2001</td>
+          </tr>
+          <tr>
+            <td>Halo 2</td>
+            <td>2004</td>
+          </tr>
+          <tr>
+            <td>Halo 3</td>
+            <td>2007</td>
+          </tr>
+          <tr>
+            <td>Mojang</td>
+            <td>Minecraft</td>
+            <td>2011</td>
+          </tr>
+        </tbody>
+
+        <tfoot>
+          <tr>
+            <!-- horizontal merge (colspan) -->
+            <td colspan="3">Count: 4</td>
+          </tr>
+        </tfoot>
+      </table>
+    </section>
+      <a href="index.html">Back to Main Page</a>
+  </main>
+</body>
+</html>
