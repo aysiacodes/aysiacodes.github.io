@@ -1,3 +1,9 @@
 body{
-    background-color: whitesmoke
+    background-color: white
+}
+
+.resume-header {
+  display: flex;
+  gap: 1rem;          /* space between items */
+  font-size: 1.1rem;
 }
