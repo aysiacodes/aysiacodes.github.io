@@ -151,7 +151,7 @@ main h1{
   border-radius: 10px;
 }
 
-/* article transition + hover expand + text light->dark (fixed) */
+/* article transition + hover expand + text light->dark */
 #container article{
   color: rgba(255, 255, 255, 0.55);
   transform: scale(1);
@@ -168,7 +168,7 @@ main h1{
   margin-top: 0;
 }
 
-/* big first letter (only main text, not read more) */
+/* big first letter*/
 #container article p:first-of-type::first-letter{
   font-family: "Times New Roman", Times, serif;
   font-size: 36px;
@@ -180,7 +180,7 @@ main h1{
   color: #b7e4c7;
 }
 
-/* wikipedia arrow for google links (read more) */
+/* wikipedia arrow */
 a[href*="google.com"]::after{
   content: "";
   display: inline-block;
