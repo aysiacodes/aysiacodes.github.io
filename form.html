@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="en">
 <link rel="stylesheet" href="styles.css">
+
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -9,8 +10,11 @@
     body {
       margin: 0;
       font-family: "Times New Roman", Times, serif;
-      background: #0a2a43; /* dark blue like the screenshot */
+      background: #0a2a43;
+      /* dark blue like the screenshot */
+
     }
+
     main {
       max-width: 360px;
       margin: 18px auto;
@@ -18,21 +22,79 @@
       padding: 14px 16px 18px;
       border: 1px solid #cfcfcf;
     }
-    h1 { margin: 0 0 10px; font-size: 32px; line-height: 1.05; }
-    h2 { margin: 18px 0 10px; font-size: 26px; }
-    fieldset { border: 0; padding: 0; margin: 0; }
-    .row { display: flex; align-items: center; gap: 8px; margin: 2px 0; }
-    label { min-width: 62px; }
-    input[type="text"], input[type="tel"], input[type="email"], textarea, select {
+
+    h1 {
+      margin: 0 0 10px;
+      font-size: 32px;
+      line-height: 1.05;
+    }
+
+    h2 {
+      margin: 18px 0 10px;
+      font-size: 26px;
+    }
+
+    fieldset {
+      border: 0;
+      padding: 0;
+      margin: 0;
+    }
+
+    .row {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin: 2px 0;
+    }
+
+    label {
+      min-width: 62px;
+    }
+
+    input[type="text"],
+    input[type="tel"],
+    input[type="email"],
+    textarea,
+    select {
       font-family: inherit;
       font-size: 14px;
     }
-    textarea { width: 180px; height: 64px; }
-    .toppings label, .sauce label { min-width: auto; }
-    .toppings { display: flex; flex-wrap: wrap; gap: 6px 12px; max-width: 280px; }
-    table { border-collapse: collapse; margin-top: 6px; }
-    th, td { border: 1px solid #333; padding: 2px 4px; vertical-align: top; }
-    caption { caption-side: top; text-align: left; font-weight: bold; margin-bottom: 4px; }
+
+    textarea {
+      width: 180px;
+      height: 64px;
+    }
+
+    .toppings label,
+    .sauce label {
+      min-width: auto;
+    }
+
+    .toppings {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px 12px;
+      max-width: 280px;
+    }
+
+    table {
+      border-collapse: collapse;
+      margin-top: 6px;
+    }
+
+    th,
+    td {
+      border: 1px solid #333;
+      padding: 2px 4px;
+      vertical-align: top;
+    }
+
+    caption {
+      caption-side: top;
+      text-align: left;
+      font-weight: bold;
+      margin-bottom: 4px;
+    }
   </style>
 </head>
 
@@ -195,7 +257,8 @@
         </tfoot>
       </table>
     </section>
-      <a href="index.html">Back to Main Page</a>
+    <a href="index.html">Back to Main Page</a>
   </main>
 </body>
+
 </html>

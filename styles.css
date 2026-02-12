@@ -3,21 +3,21 @@
 :root {
   --sky: #6ec6ff;
   --sky-dark: #4fa3dc;
-  --white: #ffffff;
-  --gray: #ffffff;
-  --text: #020101;
+  --white: #16151c;
+  --gray: #191d2f;
+  --text: #ffffff;
 }
 
-body{
+body {
 
-   margin: 0;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  margin: 0;
+  font: "Abril Text", sans-serif;
   background: var(--gray);
   color: var(--text);
 }
 
 main {
-   max-width: 1400px;
+  max-width: 1400px;
   margin: 2.5rem auto;
   padding: 0 1rem;
 }
@@ -26,33 +26,36 @@ h3 {
   margin: 2rem 0 0;
   padding: 1rem 1.25rem;
   background: #000000;
-  color: #ffffff;
+  color: #0bb544;
   border-radius: 12px 12px 0 0;
-  font-size: 1.3rem;
+  font-size: 1rem;
 }
 
-h3 + ul {
+h3+ul {
   margin: 0;
   padding: 1rem 1.5rem;
-  background: #ffffff;
+  background: #191920;
   border-radius: 0 0 12px 12px;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
   list-style-position: inside;
 }
+
 .resume-header {
- display: flex;                 /* flex works on spans just fine */
-  justify-content: space-evenly; /* equal spacing */
+  display: flex;
+  /* flex works on spans just fine */
+  justify-content: space-evenly;
+  /* equal spacing */
   align-items: center;
   padding: 2.5rem 1rem;
-  background: #a0a0a0;           
+  background: #111214;
   border-radius: 16px;
   margin-bottom: 2rem;
 
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  font-size: 30px;
+  font-size: 20px;
   font-weight: 850;
-  
-  color: #000000;
+
+  color: #f9f9f9;
 }
 
 .resume-header a {
@@ -63,6 +66,7 @@ h3 + ul {
 .resume-header a:hover {
   text-decoration: underline;
 }
+
 .profile-img {
   width: 500px;
   height: auto;
