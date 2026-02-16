@@ -1,17 +1,18 @@
+/* ===============================
+   Letterboxd-Inspired Resume
+   Full CSS (Green LinkedIn Button)
+   =============================== */
 
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Abril+Fatface&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap");
 
 :root{
-  
-  --bg: #14181c;        /* page background */
-  --panel: #1b222a;     /* card body */
-  --panel-2: #161d24;   /* slightly darker panel */
-  --border: #2a3440;    /* subtle borders */
-  --text: #e6eef7;      /* main text */
-  --muted: #9fb0c3;     /* secondary text */
+  --bg: #14181c;
+  --panel: #1b222a;
+  --border: #2a3440;
+  --text: #e6eef7;
+  --muted: #9fb0c3;
 
-  /* accents (Letterboxd-ish) */
-  --green: #00e054;
+  --green: #00e054;   /* Letterboxd green */
   --blue:  #40bcf4;
   --orange:#ff8000;
 
@@ -19,196 +20,184 @@
   --shadow: 0 10px 30px rgba(0,0,0,.35);
 }
 
-*{ box-sizing: border-box; }
+*{
+  box-sizing: border-box;
+}
 
 body{
   margin: 0;
   background: var(--bg);
   color: var(--text);
   font-family: Inter, system-ui, -apple-system, "Segoe UI", sans-serif;
-  line-height: 1.45;
+  line-height: 1.6;
 }
 
-/* Center the page  */
+/* ===============================
+   Layout
+   =============================== */
+
 main{
   max-width: 980px;
   margin: 2.5rem auto;
   padding: 0 1rem 3rem;
 }
 
-/* Header banner: clean, centered, “site top bar” feel */
+
+
 .resume-header{
   display: flex;
-  justify-content: space-evenly;
   align-items: center;
-  gap: 1rem;
+  justify-content: space-between;
 
-  padding: 1.25rem 1rem;
-  background: linear-gradient(180deg, #1a2129, #14181c);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  box-shadow: var(--shadow);
+  padding: 18px 20px;
+  background: #14181c;
+  border-bottom: 1px solid var(--border);
   margin-bottom: 1.75rem;
-
-  font-weight: 700;
-  letter-spacing: .2px;
 }
 
-.resume-header a{
-  color: inherit;
+
+.resume-header .name{
+  font-weight: 800;
+  font-size: 28px;
+  color: #ffffff;
+}
+
+/* Right-side wrapper */
+.resume-header .nav-links{
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+
+.resume-header .nav-link{
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--muted);
   text-decoration: none;
 }
-.resume-header a:hover{
-  color: var(--blue);
-  text-decoration: underline;
+
+.resume-header .nav-link:hover{
+  color: #ffffff;
 }
 
-/* section “cards” (h3 header + ul body) */
+
+.resume-header .nav-btn{
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #000000;            
+  text-decoration: none;
+
+  padding: 9px 16px;
+  border-radius: 999px;
+  background: var(--green);
+  border: none;
+  transition: 0.2s ease;
+}
+
+.resume-header .nav-btn:hover{
+  filter: brightness(1.1);
+}
+
+/* ===============================
+   Intro Paragraph
+   =============================== */
+
+p{
+  margin: 0 0 1.5rem;
+  max-width: 75ch;
+}
+
+/* ===============================
+   Section Cards
+   =============================== */
+
 h3{
   margin: 1.25rem 0 0;
-  padding: .9rem 1.1rem;
+  padding: 0.9rem 1.1rem;
 
   background: #12161a;
   border: 1px solid var(--border);
   border-bottom: none;
   border-radius: var(--radius) var(--radius) 0 0;
 
-  font-size: .95rem;
+  font-size: 0.95rem;
   font-weight: 700;
-  letter-spacing: .6px;
+  letter-spacing: 0.6px;
   text-transform: uppercase;
   color: var(--green);
 }
 
-/* The card body  */
 h3 + ul{
   margin: 0;
   padding: 1rem 1.25rem;
+  padding-left: 1.5rem;
 
   background: var(--panel);
   border: 1px solid var(--border);
   border-top: none;
   border-radius: 0 0 var(--radius) var(--radius);
   box-shadow: var(--shadow);
-
-  list-style-position: outside;
-  padding-left: 1.4rem;
 }
 
-/* List readability */
 li{
-  margin: .45rem 0;
-  color: var(--text);
+  margin: 0.45rem 0;
 }
+
 li::marker{
   color: var(--muted);
 }
 
-/* Small text / secondary lines inside bullets */
-small, .muted{
-  color: var(--muted);
-}
-
+/* ===============================
+   Global Links
+   =============================== */
 
 a{
   color: var(--blue);
 }
+
 a:hover{
   color: var(--orange);
 }
 
+/* ===============================
+   Desktop
+   =============================== */
 
-.profile-img{
-  width: min(260px, 100%);
-  height: auto;
-  border-radius: 10px;
-  border: 1px solid var(--border);
-  box-shadow: var(--shadow);
-  display: block;
-  margin: 0 auto 1rem;
-}
-
-/* Mobile: stack header items */
-@media (max-width: 720px){
-  .resume-header{
-    flex-direction: column;
-    text-align: center;
+@media (min-width: 1200px){
+  main{
+    max-width: 1100px;
   }
 }
 
-/* ----------------------------
-   RESPONSIVE LAYOUT RULES
-   Mobile target: 412px
-   Desktop target: 1920px
------------------------------ */
+/* ===============================
+   Mobile (412px)
+   =============================== */
 
-/* Default = "tablet-ish / small desktop" single column */
-main {
-  max-width: 980px;
-}
+@media (max-width: 412px){
 
-/* Make card spacing and type comfortable on smaller screens */
-@media (max-width: 412px) {
-  main {
+  main{
     max-width: 100%;
     margin: 1rem auto;
     padding: 0 0.75rem 2rem;
   }
 
-  .resume-header {
+  .resume-header{
     flex-direction: column;
-    gap: 0.5rem;
-    padding: 1rem 0.75rem;
-    text-align: center;
-    font-size: 1.05rem;
+    align-items: flex-start;
+    gap: 12px;
   }
 
-  h3 {
-    margin-top: 1rem;
-    font-size: 0.85rem;
-    padding: 0.75rem 0.9rem;
+  .resume-header .name{
+    font-size: 24px;
   }
 
-  h3 + ul {
-    padding: 0.9rem 1rem;
-    padding-left: 1.25rem;
-  }
-
-  .profile-img {
-    width: min(220px, 100%);
-  }
-}
-
-/* Desktop / laptop layout: different from mobile */
-@media (min-width: 1200px) {
-  main {
-    max-width: 1200px; 
-  }
-
-  /* Two-column “dashboard” feel for your section cards */
-  main {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1.25rem 1.25rem;
-    align-items: start;
-  }
-
-  /* Header spans both columns */
-  .resume-header {
-    grid-column: 1 / -1;
-  }
-
-  /* Make each (h3 + ul) pair behave like one grid item */
-  h3 {
-    margin: 0; /* grid gap handles spacing */
-  }
-
-  h3 + ul {
-    margin-bottom: 0; /* grid gap handles spacing */
-  }
-
-  /* Ensure each section starts in the same column as its header */
-  h3 {
-    grid-column: auto;
+  .resume-header .nav-links{
+    gap: 14px;
+    flex-wrap: wrap;
   }
 }
