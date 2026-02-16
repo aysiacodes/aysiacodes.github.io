@@ -1,73 +1,214 @@
-@import url("https://fonts.googleapis.com/css?family=Montserrat");
 
-:root {
-  --sky: #6ec6ff;
-  --sky-dark: #4fa3dc;
-  --white: #16151c;
-  --gray: #191d2f;
-  --text: #ffffff;
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Abril+Fatface&display=swap");
+
+:root{
+  
+  --bg: #14181c;        /* page background */
+  --panel: #1b222a;     /* card body */
+  --panel-2: #161d24;   /* slightly darker panel */
+  --border: #2a3440;    /* subtle borders */
+  --text: #e6eef7;      /* main text */
+  --muted: #9fb0c3;     /* secondary text */
+
+  /* accents (Letterboxd-ish) */
+  --green: #00e054;
+  --blue:  #40bcf4;
+  --orange:#ff8000;
+
+  --radius: 14px;
+  --shadow: 0 10px 30px rgba(0,0,0,.35);
 }
 
-body {
+*{ box-sizing: border-box; }
 
+body{
   margin: 0;
-  font: "Abril Text", sans-serif;
-  background: var(--gray);
+  background: var(--bg);
   color: var(--text);
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", sans-serif;
+  line-height: 1.45;
 }
 
-main {
-  max-width: 1400px;
+/* Center the page  */
+main{
+  max-width: 980px;
   margin: 2.5rem auto;
-  padding: 0 1rem;
+  padding: 0 1rem 3rem;
 }
 
-h3 {
-  margin: 2rem 0 0;
-  padding: 1rem 1.25rem;
-  background: #000000;
-  color: #0bb544;
-  border-radius: 12px 12px 0 0;
-  font-size: 1rem;
-}
-
-h3+ul {
-  margin: 0;
-  padding: 1rem 1.5rem;
-  background: #191920;
-  border-radius: 0 0 12px 12px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
-  list-style-position: inside;
-}
-
-.resume-header {
+/* Header banner: clean, centered, “site top bar” feel */
+.resume-header{
   display: flex;
-  /* flex works on spans just fine */
   justify-content: space-evenly;
-  /* equal spacing */
   align-items: center;
-  padding: 2.5rem 1rem;
-  background: #111214;
-  border-radius: 16px;
-  margin-bottom: 2rem;
+  gap: 1rem;
 
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  font-size: 20px;
-  font-weight: 850;
+  padding: 1.25rem 1rem;
+  background: linear-gradient(180deg, #1a2129, #14181c);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  margin-bottom: 1.75rem;
 
-  color: #f9f9f9;
+  font-weight: 700;
+  letter-spacing: .2px;
 }
 
-.resume-header a {
+.resume-header a{
   color: inherit;
   text-decoration: none;
 }
-
-.resume-header a:hover {
+.resume-header a:hover{
+  color: var(--blue);
   text-decoration: underline;
 }
 
-.profile-img {
-  width: 500px;
+/* section “cards” (h3 header + ul body) */
+h3{
+  margin: 1.25rem 0 0;
+  padding: .9rem 1.1rem;
+
+  background: #12161a;
+  border: 1px solid var(--border);
+  border-bottom: none;
+  border-radius: var(--radius) var(--radius) 0 0;
+
+  font-size: .95rem;
+  font-weight: 700;
+  letter-spacing: .6px;
+  text-transform: uppercase;
+  color: var(--green);
+}
+
+/* The card body  */
+h3 + ul{
+  margin: 0;
+  padding: 1rem 1.25rem;
+
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-top: none;
+  border-radius: 0 0 var(--radius) var(--radius);
+  box-shadow: var(--shadow);
+
+  list-style-position: outside;
+  padding-left: 1.4rem;
+}
+
+/* List readability */
+li{
+  margin: .45rem 0;
+  color: var(--text);
+}
+li::marker{
+  color: var(--muted);
+}
+
+/* Small text / secondary lines inside bullets */
+small, .muted{
+  color: var(--muted);
+}
+
+
+a{
+  color: var(--blue);
+}
+a:hover{
+  color: var(--orange);
+}
+
+
+.profile-img{
+  width: min(260px, 100%);
   height: auto;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+  display: block;
+  margin: 0 auto 1rem;
+}
+
+/* Mobile: stack header items */
+@media (max-width: 720px){
+  .resume-header{
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+/* ----------------------------
+   RESPONSIVE LAYOUT RULES
+   Mobile target: 412px
+   Desktop target: 1920px
+----------------------------- */
+
+/* Default = "tablet-ish / small desktop" single column */
+main {
+  max-width: 980px;
+}
+
+/* Make card spacing and type comfortable on smaller screens */
+@media (max-width: 412px) {
+  main {
+    max-width: 100%;
+    margin: 1rem auto;
+    padding: 0 0.75rem 2rem;
+  }
+
+  .resume-header {
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 1rem 0.75rem;
+    text-align: center;
+    font-size: 1.05rem;
+  }
+
+  h3 {
+    margin-top: 1rem;
+    font-size: 0.85rem;
+    padding: 0.75rem 0.9rem;
+  }
+
+  h3 + ul {
+    padding: 0.9rem 1rem;
+    padding-left: 1.25rem;
+  }
+
+  .profile-img {
+    width: min(220px, 100%);
+  }
+}
+
+/* Desktop / laptop layout: different from mobile */
+@media (min-width: 1200px) {
+  main {
+    max-width: 1200px; 
+  }
+
+  /* Two-column “dashboard” feel for your section cards */
+  main {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.25rem 1.25rem;
+    align-items: start;
+  }
+
+  /* Header spans both columns */
+  .resume-header {
+    grid-column: 1 / -1;
+  }
+
+  /* Make each (h3 + ul) pair behave like one grid item */
+  h3 {
+    margin: 0; /* grid gap handles spacing */
+  }
+
+  h3 + ul {
+    margin-bottom: 0; /* grid gap handles spacing */
+  }
+
+  /* Ensure each section starts in the same column as its header */
+  h3 {
+    grid-column: auto;
+  }
 }
