@@ -57,9 +57,9 @@ function printCarObject() {
 
 function loadCar(which) {
     let car;
-    if (which === 1) car = window.carObject1;
-    if (which === 2) car = window.carObject2;
-    if (which === 3) car = window.carObject3;
+    if (which === 1) car = carObject1;
+    if (which === 2) car = carObject2;
+    if (which === 3) car = carObject3;
 
     if (!car) return;
 
