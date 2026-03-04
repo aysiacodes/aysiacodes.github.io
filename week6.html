@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pokemon Team Builder</title>
+
+<link rel="stylesheet" href="week6.css">
+
+</head>
+
+<body>
+
+<div class="card">
+
+<h1>Pokemon Team Builder</h1>
+
+<div class="row">
+<label for="query">Name or ID</label>
+<input id="query" type="text">
+<button id="findBtn">Find</button>
+</div>
+
+<div id="status" class="status"></div>
+
+<div class="pokemon-area">
+
+<img id="sprite" class="sprite">
+
+<audio id="cry" controls></audio>
+
+</div>
+
+<div class="moves-grid">
+
+<select id="move1"></select>
+<select id="move2"></select>
+<select id="move3"></select>
+<select id="move4"></select>
+
+</div>
+
+<div class="actions">
+<button id="addBtn">Add to Team</button>
+</div>
+
+<div class="team">
+
+<h2>My Team</h2>
+
+<table>
+
+<thead>
+<tr>
+<th>Pokemon</th>
+<th>Moves</th>
+</tr>
+</thead>
+
+<tbody id="teamBody">
+
+<tr>
+<td colspan="2">No team members yet.</td>
+</tr>
+
+</tbody>
+
+</table>
+
+</div>
+
+</div>
+
+<script src="week6.js"></script>
+
+</body>
+</html>
