@@ -97,6 +97,11 @@ function addToTeam(){
 
 if(!currentPokemon) return;
 
+
+if(teamBody.innerText.includes("No team members yet")){
+teamBody.innerHTML = "";
+}
+
 let moves = [
 move1.value,
 move2.value,
